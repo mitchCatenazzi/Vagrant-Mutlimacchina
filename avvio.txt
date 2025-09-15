@@ -1,0 +1,30 @@
+per avviare vagrant e le macchine virtuali, soprattutto se sono state già avviate in precedenza:
+
+vagrant destroy -f
+
+eliminare le cartelle C:\Users\Mitch\VirtualBox VMs (o manualmente da VirtualBox)
+
+fare 
+
+vagrant up
+
+controllare nel terminale che non ci siano errori che causano il malfunzionamento
+
+
+ Test finale
+Dopo vagrant up, vai su 
+
+http://192.168.56.10/ 
+
+per vedere la pagina PHP.
+
+
+Vai su 
+
+http://192.168.56.10/adminer.php 
+
+per accedere ad Adminer (usare i dati del DB).
+
+DB_NAME="m340db"
+DB_USER="m340user"
+DB_PASS="m340pass"
