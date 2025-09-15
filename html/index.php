@@ -4,30 +4,26 @@ $username = "m340user";
 $password = "m340pass";
 $dbname = "m340db";
 
-// Connessione
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Controllo
 if ($conn->connect_error) {
     die("Connessione fallita: " . $conn->connect_error);
 } else {
     echo "<h1>Connessione al DB riuscita </h1>";
 }
 
-// Creiamo una tabella di test se non esiste
-$conn->query("CREATE TABLE IF NOT EXISTS test (id INT AUTO_INCREMENT PRIMARY KEY, msg VARCHAR(255))");
-
-// Inseriamo un record
-$conn->query("INSERT INTO test (msg) VALUES ('Ciao da Vagrant!')");
-
-// Leggiamo i record
+$conn->query("INSERT INTO test (messaggio) VALUES ('ciao dal database!')");
 $result = $conn->query("SELECT * FROM test");
+
+echo "<a href='adminer.php' target='_blank' style='background: #28a745; color: #fff'>consultare adminier</a>";
 
 echo "<ul>";
 while ($row = $result->fetch_assoc()) {
-    echo "<li>" . $row["id"] . ": " . $row["msg"] . "</li>";
+    echo "<li>" . $row["id"] . ": " . $row["messaggio"] . "</li>";
 }
 echo "</ul>";
+
+
 
 $conn->close();
 ?>

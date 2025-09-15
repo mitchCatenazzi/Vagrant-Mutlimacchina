@@ -1,7 +1,7 @@
 Vagrant.configure("2") do |config|
   BOX_IMAGE = "ubuntu/jammy64"
   PROXY_ENABLE = false # true se si lavora sulla rete grigia a scuola, sennò false per la nera/casa
-  PROXY_URL = "http://IPPROXY:PORTA" # se si il proxy a true in rete grigia, mettere IP e la PORTA del proxy della scuola
+  PROXY_URL = "http://proxy.cpt.local:8080" # se PROXY_ENABLE è settato true in rete grigia a scuola, mettere IP e la PORTA del proxy della scuola
 
   # definizione base delle reti
   BASE_INT_NETWORK = "10.10.20"
@@ -17,6 +17,7 @@ Vagrant.configure("2") do |config|
   if PROXY_ENABLE
     config.proxy.http     = PROXY_URL
     config.proxy.https    = PROXY_URL
+    #linea generata dall'ia
     config.proxy.no_proxy = "localhost,127.0.0.1"
   end
 

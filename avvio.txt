@@ -12,6 +12,7 @@ controllare nel terminale che non ci siano errori che causano il malfunzionament
 
 
  Test finale
+
 Dopo vagrant up, vai su 
 
 http://192.168.56.10/ 
@@ -25,6 +26,7 @@ http://192.168.56.10/adminer.php
 
 per accedere ad Adminer (usare i dati del DB).
 
-DB_NAME="m340db"
-DB_USER="m340user"
-DB_PASS="m340pass"
+Server: 10.10.20.11
+Username: m340user
+Password: m340pass
+Database: m340db
