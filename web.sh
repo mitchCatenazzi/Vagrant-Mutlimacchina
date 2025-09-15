@@ -1,6 +1,7 @@
 #ferma lo script in caso di errore
 set -e
 
+#apt-get si occupa di aggiornare la lista dei pacchetti disponibili
 sudo apt-get update -y
 
 # installa wget per scaricare Adminer e PHP MySQL extension
